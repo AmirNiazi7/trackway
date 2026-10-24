@@ -1,26 +1,118 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* =========================================================================
+     FastTrack Design System Tokens (Extracted directly from Figma specifications)
+     ========================================================================= */
+
+  /* Background Colors */
+  --bg-primary: #0e1527;
+  --bg-surface: #161e37;
+  --bg-surface-hover: #1c2646;
+  --bg-surface-active: #131a31;
+
+  /* Card Gradient Stops */
+  --bg-card-gradient-start: #0a1020;
+  --bg-card-gradient-mid: #131b30;
+  --bg-card-gradient-end: #1a2340;
+
+  /* Brand Golds & Accents */
+  --color-primary-gold: #e3ad34;
+  --color-primary-gold-hover: #f0bd46;
+  --color-accent-gold: #d4af77;
+  --color-gold-light: #fcf1b2;
+  --color-gold-dark: #b8861b;
+  --color-gold-border: #9b5e0b;
+
+  /* Neutral & Functional Colors */
+  --color-text-white: #ffffff;
+  --color-text-muted: #64748b;
+  --color-text-muted-light: #94a3b8;
+  --color-border-subtle: #3b3e4f;
+  --color-border-focus: #e3ad34;
+  --color-error: #ef4444;
+  --color-success: #10b981;
+
+  /* Shadows & Highlights */
+  --shadow-btn-inner: inset 5px -8px 19.5px 0px #804301;
+  --shadow-btn-glow: 0px 8px 30px rgba(227, 173, 52, 0.25);
+  --shadow-card-glow: 0px 0px 50px rgba(155, 94, 11, 0.15);
+  --shadow-input-focus: 0 0 0 3px rgba(227, 173, 52, 0.2);
+
+  /* Gradients */
+  --gradient-btn-gold: linear-gradient(90.02deg, #fcf1b2 5.44%, #e2a622 99.89%);
+  --gradient-btn-gold-hover: linear-gradient(90.02deg, #ffffff 0%, #f7c756 100%);
+  --gradient-card-dark: linear-gradient(153.15deg, rgb(10, 16, 32) 8.49%, rgb(19, 27, 48) 58.3%, rgb(26, 35, 64) 91.51%);
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-background: var(--bg-primary);
+  --color-foreground: var(--color-text-white);
+
+  --font-sora: var(--font-sora), sans-serif;
+  --font-inter: var(--font-inter), sans-serif;
+
+  --color-bg-primary: var(--bg-primary);
+  --color-bg-surface: var(--bg-surface);
+  --color-primary-gold: var(--color-primary-gold);
+  --color-accent-gold: var(--color-accent-gold);
+  --color-gold-light: var(--color-gold-light);
+  --color-gold-border: var(--color-gold-border);
+  --color-text-muted: var(--color-text-muted);
+  --color-border-subtle: var(--color-border-subtle);
+  --color-error: var(--color-error);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* Base resets & typography */
+html,
+body {
+  background-color: var(--bg-primary);
+  color: var(--color-text-white);
+  font-family: var(--font-inter), sans-serif;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-sora), sans-serif;
+}
+
+/* Custom luxury button styling with inner shadow */
+.btn-gold-luxury {
+  background-image: var(--gradient-btn-gold);
+  box-shadow: var(--shadow-btn-inner);
+  border: 1px solid var(--color-gold-border);
+  color: #000000;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-gold-luxury:hover {
+  filter: brightness(1.06);
+  box-shadow: var(--shadow-btn-inner), var(--shadow-btn-glow);
+  transform: translateY(-1px);
+}
+
+.btn-gold-luxury:active {
+  transform: translateY(1px);
+  filter: brightness(0.96);
+}
+
+/* Card gradient */
+.bg-card-luxury {
+  background-image: var(--gradient-card-dark);
+}
+
+/* Subtle pulse animation for emblem aura */
+@keyframes goldPulse {
+  0%, 100% {
+    opacity: 0.85;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.015);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+.animate-gold-subtle {
+  animation: goldPulse 6s ease-in-out infinite;
 }
