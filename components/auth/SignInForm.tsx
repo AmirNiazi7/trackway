@@ -62,20 +62,20 @@ export function SignInForm() {
   };
 
   return (
-    <div className="relative z-10 w-full max-w-[533px] flex flex-col justify-between min-h-[640px] lg:min-h-[820px] py-4">
+    <div className="relative z-10 w-full max-w-[533px] flex flex-col justify-center py-4">
       {/* Top Header Section */}
-      <div className="flex flex-col gap-3">
+      <div className="flex flex-col gap-2 sm:gap-2.5">
         <h2 className="font-['var(--font-sora)'] font-bold text-[32px] sm:text-[38px] lg:text-[40px] leading-[1.1] text-white tracking-[-1.6px]">
           Sign in
         </h2>
-        <p className="font-['var(--font-inter)'] font-normal text-[16px] sm:text-[18px] leading-[1.5] text-[#64748b]">
+        <p className="font-['var(--font-inter)'] font-normal text-[15px] sm:text-[16px] leading-[1.5] text-[#64748b]">
           Please login to continue to your account.
         </p>
       </div>
 
       {loginSuccess ? (
         // Simulated Success State
-        <div className="my-auto py-8 px-6 rounded-2xl bg-[#161e37] border border-[#e3ad34] shadow-[0_0_30px_rgba(227,173,52,0.2)] text-center flex flex-col items-center gap-4 animate-fade-in">
+        <div className="mt-6 py-8 px-6 rounded-2xl bg-[#161e37] border border-[#e3ad34] shadow-[0_0_30px_rgba(227,173,52,0.2)] text-center flex flex-col items-center gap-4 animate-fade-in">
           <div className="w-16 h-16 rounded-full bg-[#e3ad34]/20 border border-[#e3ad34] flex items-center justify-center text-[#e3ad34]">
             <svg
               className="w-8 h-8"
@@ -108,8 +108,8 @@ export function SignInForm() {
         </div>
       ) : (
         // Sign In Form
-        <form onSubmit={handleSubmit} className="flex flex-col gap-8 my-auto pt-6 pb-4">
-          <div className="flex flex-col gap-5">
+        <form onSubmit={handleSubmit} className="flex flex-col gap-6 sm:gap-7 mt-6 sm:mt-7">
+          <div className="flex flex-col gap-4 sm:gap-5">
             {/* Email Field */}
             <Input
               id="email-input"
@@ -182,7 +182,7 @@ export function SignInForm() {
       )}
 
       {/* Footer Link */}
-      <div className="pt-8 text-center">
+      <div className="mt-6 sm:mt-7 text-center">
         <p className="font-['var(--font-inter)'] font-normal text-[16px] sm:text-[18px] leading-[1.5] text-[#64748b]">
           New to Fast Track?{" "}
           <Link
