@@ -14,6 +14,7 @@ export function HeroWatermark() {
         fill
         sizes="(max-width: 1024px) 360px, 468px"
         className="object-cover object-bottom-right"
+        priority
       />
     </div>
   );
