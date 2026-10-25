@@ -36,9 +36,9 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 
     // Size variants
     const sizeClasses = {
-      sm: "h-[44px] px-4 text-sm rounded-[12px]",
-      md: "h-[52px] px-6 text-base rounded-[14px]",
-      lg: "h-[60px] px-8 text-[18px] tracking-[-0.18px] rounded-[16px]",
+      sm: "h-[38px] px-4 text-xs sm:text-sm rounded-[10px]",
+      md: "h-[44px] px-5 text-sm sm:text-base rounded-[12px]",
+      lg: "h-[48px] sm:h-[50px] px-6 text-[15px] sm:text-[16px] tracking-[-0.15px] rounded-[13px]",
     };
 
     // Style variants

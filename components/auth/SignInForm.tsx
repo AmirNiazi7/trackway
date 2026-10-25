@@ -62,23 +62,23 @@ export function SignInForm() {
   };
 
   return (
-    <div className="relative z-10 w-full max-w-[533px] flex flex-col justify-center py-4">
+    <div className="relative z-10 w-full max-w-[440px] flex flex-col justify-center py-2 sm:py-3">
       {/* Top Header Section */}
-      <div className="flex flex-col gap-2 sm:gap-2.5">
-        <h2 className="font-['var(--font-sora)'] font-bold text-[32px] sm:text-[38px] lg:text-[40px] leading-[1.1] text-white tracking-[-1.6px]">
+      <div className="flex flex-col gap-1.5 sm:gap-2">
+        <h2 className="font-['var(--font-sora)'] font-bold text-[26px] sm:text-[30px] lg:text-[32px] leading-tight text-white tracking-tight">
           Sign in
         </h2>
-        <p className="font-['var(--font-inter)'] font-normal text-[15px] sm:text-[16px] leading-[1.5] text-[#64748b]">
+        <p className="font-['var(--font-inter)'] font-normal text-[13px] sm:text-[14px] leading-relaxed text-[#64748b]">
           Please login to continue to your account.
         </p>
       </div>
 
       {loginSuccess ? (
         // Simulated Success State
-        <div className="mt-6 py-8 px-6 rounded-2xl bg-[#161e37] border border-[#e3ad34] shadow-[0_0_30px_rgba(227,173,52,0.2)] text-center flex flex-col items-center gap-4 animate-fade-in">
-          <div className="w-16 h-16 rounded-full bg-[#e3ad34]/20 border border-[#e3ad34] flex items-center justify-center text-[#e3ad34]">
+        <div className="mt-5 py-6 px-5 rounded-2xl bg-[#161e37] border border-[#e3ad34] shadow-[0_0_30px_rgba(227,173,52,0.2)] text-center flex flex-col items-center gap-3 animate-fade-in">
+          <div className="w-12 h-12 rounded-full bg-[#e3ad34]/20 border border-[#e3ad34] flex items-center justify-center text-[#e3ad34]">
             <svg
-              className="w-8 h-8"
+              className="w-6 h-6"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -91,16 +91,16 @@ export function SignInForm() {
               />
             </svg>
           </div>
-          <h3 className="font-['var(--font-sora)'] font-bold text-2xl text-white">
+          <h3 className="font-['var(--font-sora)'] font-bold text-xl text-white">
             Welcome back to FastTrack!
           </h3>
-          <p className="text-[#64748b] text-[16px] max-w-sm">
+          <p className="text-[#64748b] text-[14px] max-w-sm">
             You are authenticated as <span className="text-white font-medium">{formData.email}</span>. Oversee your stables and horses.
           </p>
           <div className="pt-2 flex gap-3">
             <button
               onClick={handleReset}
-              className="px-6 py-2.5 rounded-xl border border-[#3b3e4f] text-[#64748b] hover:text-white hover:border-[#e3ad34] text-sm transition-colors cursor-pointer"
+              className="px-5 py-2 rounded-xl border border-[#3b3e4f] text-[#64748b] hover:text-white hover:border-[#e3ad34] text-xs sm:text-sm transition-colors cursor-pointer"
             >
               Sign out / Test again
             </button>
@@ -108,8 +108,8 @@ export function SignInForm() {
         </div>
       ) : (
         // Sign In Form
-        <form onSubmit={handleSubmit} className="flex flex-col gap-6 sm:gap-7 mt-6 sm:mt-7">
-          <div className="flex flex-col gap-4 sm:gap-5">
+        <form onSubmit={handleSubmit} className="flex flex-col gap-4 sm:gap-5 mt-4 sm:mt-5">
+          <div className="flex flex-col gap-3 sm:gap-3.5">
             {/* Email Field */}
             <Input
               id="email-input"
@@ -143,7 +143,7 @@ export function SignInForm() {
             />
 
             {/* Keep Logged In & Forgot Password */}
-            <div className="flex items-center justify-between gap-4 pt-1 flex-wrap">
+            <div className="flex items-center justify-between gap-3 pt-0.5 flex-wrap">
               <Checkbox
                 id="keep-logged-in"
                 checked={formData.keepLoggedIn}
@@ -155,7 +155,7 @@ export function SignInForm() {
 
               <Link
                 href="#forgot-password"
-                className="font-['var(--font-inter)'] font-medium text-[15px] sm:text-[16px] leading-[1.5] text-[#e3ad34] underline decoration-from-font hover:text-[#f3c86c] transition-colors"
+                className="font-['var(--font-inter)'] font-medium text-[13px] sm:text-[14px] leading-tight text-[#e3ad34] underline decoration-from-font hover:text-[#f3c86c] transition-colors"
                 onClick={(e) => {
                   e.preventDefault();
                   alert("Password reset instructions will be sent to your email.");
@@ -167,7 +167,7 @@ export function SignInForm() {
           </div>
 
           {/* Submit Button */}
-          <div className="pt-2">
+          <div className="pt-1">
             <Button
               type="submit"
               size="lg"
@@ -182,8 +182,8 @@ export function SignInForm() {
       )}
 
       {/* Footer Link */}
-      <div className="mt-6 sm:mt-7 text-center">
-        <p className="font-['var(--font-inter)'] font-normal text-[16px] sm:text-[18px] leading-[1.5] text-[#64748b]">
+      <div className="mt-4 sm:mt-5 text-center">
+        <p className="font-['var(--font-inter)'] font-normal text-[13px] sm:text-[14px] leading-normal text-[#64748b]">
           New to Fast Track?{" "}
           <Link
             href="#create-account"

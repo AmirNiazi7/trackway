@@ -40,19 +40,19 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
     const resolvedType = isPassword ? (showPassword ? "text" : "password") : type;
 
     return (
-      <div className={`flex flex-col gap-[10px] w-full ${containerClassName}`}>
+      <div className={`flex flex-col gap-1.5 w-full ${containerClassName}`}>
         {label && (
           <label
             htmlFor={inputId}
-            className="font-['var(--font-inter)'] font-medium text-[14px] leading-[20.2px] tracking-[0.94px] uppercase text-white select-none flex items-center gap-1"
+            className="font-['var(--font-inter)'] font-medium text-[12px] sm:text-[13px] leading-tight tracking-[0.8px] uppercase text-white select-none flex items-center gap-1"
           >
             <span>{label}</span>
-            {isRequired && <span className="text-[#ef4444] text-[14px]">*</span>}
+            {isRequired && <span className="text-[#ef4444] text-[13px]">*</span>}
           </label>
         )}
 
         <div
-          className={`relative flex items-center bg-[#161e37] rounded-[16px] transition-all duration-200 border ${
+          className={`relative flex items-center bg-[#161e37] rounded-[13px] transition-all duration-200 border ${
             error
               ? "border-[#ef4444] ring-1 ring-[#ef4444]/40"
               : isFocused
@@ -61,7 +61,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
           } ${disabled ? "opacity-50 cursor-not-allowed" : ""}`}
         >
           {leftElement && (
-            <div className="pl-4 flex items-center justify-center shrink-0 text-[#64748b]">
+            <div className="pl-3.5 flex items-center justify-center shrink-0 text-[#64748b]">
               {leftElement}
             </div>
           )}
@@ -79,7 +79,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
               setIsFocused(false);
               props.onBlur?.(e);
             }}
-            className={`w-full bg-transparent px-[16px] py-[16px] text-[18px] leading-[1.5] text-white placeholder-[#64748b] font-['var(--font-inter)'] font-normal focus:outline-none rounded-[16px] ${
+            className={`w-full bg-transparent px-[14px] py-[11px] sm:py-[12px] text-[15px] sm:text-[16px] leading-[1.4] text-white placeholder-[#64748b] font-['var(--font-inter)'] font-normal focus:outline-none rounded-[13px] ${
               leftElement ? "pl-2" : ""
             } ${rightElement || isPassword ? "pr-2" : ""} ${className}`}
             {...props}
